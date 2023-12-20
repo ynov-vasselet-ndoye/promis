@@ -22,6 +22,14 @@ services:
     depends_on:
       - strapiDB
 
+  front:
+    build:
+      context: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      -  /frontend:/src
+
   strapiDB:
     image: postgres:12.0-alpine
     container_name: strapi_promis_db
@@ -42,6 +50,7 @@ services:
 
 volumes:
   strapi-data:
+  front:
 
 networks:
   strapi:

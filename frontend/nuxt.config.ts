@@ -7,6 +7,13 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
+  build: {
+    hotMiddleware: {
+      client: {
+        overlay: false,
+      },
+    },
+  },
   modules: [
     '@nuxtjs/strapi',
     '@nuxt/image',
