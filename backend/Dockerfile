@@ -3,7 +3,7 @@ FROM node:18
 RUN apt-get update && apt-get install libvips-dev -y
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
-WORKDIR app
+WORKDIR app/backend
 COPY package.json .
 COPY yarn.lock .
 COPY . .
