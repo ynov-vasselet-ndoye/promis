@@ -7,6 +7,7 @@ WORKDIR app/backend
 COPY package.json .
 COPY yarn.lock .
 COPY . .
+RUN rm -rf node_modules package-lock.json
 RUN yarn config set network-timeout 600000 -g && yarn install
 RUN yarn build
 EXPOSE 1337
