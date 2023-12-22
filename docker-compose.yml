@@ -31,13 +31,17 @@ services:
       - strapiDB
 
   front:
-    build:
-      context: ./frontend
+    image: node:20-slim
+    build: ./frontend
+    restart: always
     ports:
       - "3000:3000"
       - "24678:24678"
     depends_on:
       - back
+    volumes:
+      - ./frontend/:/usr/promis/front
+    working_dir: /usr/promis/front
 
   strapiDB:
     image: postgres:12.0-alpine
@@ -59,7 +63,6 @@ services:
 
 volumes:
   strapi-data:
-  front:
 
 networks:
   strapi:

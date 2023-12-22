@@ -14,6 +14,8 @@ FROM base AS build
 
 COPY package.json .
 
+RUN rm -rf node_modules package-lock.json
+RUN pnpm install
 RUN pnpm install --shamefully-hoist
 RUN pnpm update
 

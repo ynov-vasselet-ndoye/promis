@@ -13,7 +13,6 @@ useSeoMeta({
 
 <template>
   <div>
-    Test
     <AppNavbar />
     <NuxtPage />
     <AppFooter />

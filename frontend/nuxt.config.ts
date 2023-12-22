@@ -7,13 +7,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
-  build: {
-    hotMiddleware: {
-      client: {
-        overlay: false,
-      },
-    },
-  },
   modules: [
     '@nuxtjs/strapi',
     '@nuxt/image',
@@ -27,5 +20,10 @@ export default defineNuxtConfig({
       version: 'v4',
       prefix: '/api'
     }
-  }
+  },
+  watchers: {
+    webpack: {
+      aggregateTimeout: 300,
+    },
+  },
 })
