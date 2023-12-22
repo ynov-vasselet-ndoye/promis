@@ -10,13 +10,13 @@ RUN corepack enable
 WORKDIR /src
 
 # Build
-FROM base as build
+FROM base AS build
 
 COPY package.json .
-COPY . .
 
 RUN pnpm install --shamefully-hoist
 RUN pnpm update
 
+COPY . .
 
 CMD ["pnpm", "run", "dev"]

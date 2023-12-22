@@ -9,6 +9,7 @@ COPY yarn.lock .
 COPY . .
 RUN rm -rf node_modules package-lock.json
 RUN yarn config set network-timeout 600000 -g && yarn install
+RUN yarn add pg
 RUN yarn build
 EXPOSE 1337
 CMD ["yarn", "develop"]
