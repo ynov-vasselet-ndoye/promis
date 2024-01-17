@@ -7,7 +7,7 @@ ARG PORT=3000
 
 RUN corepack enable
 
-WORKDIR /src
+WORKDIR /app/frontend/
 
 # Build
 FROM base AS build

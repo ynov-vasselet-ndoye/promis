@@ -22,7 +22,7 @@ services:
         - ./backend/src:/app/backend/src
         - ./backend/package.json:/app/backend/package.json
         - ./backend/package-lock.json:/app/backend/package-lock.json
-        - ./backend/.env:/opt/.env
+        - ./backend/.env:/app/backend/.env
     ports:
       - "1337:1337"
     networks:
@@ -34,7 +34,7 @@ services:
     build:
       context: ./frontend
     volumes:
-      - ./frontend:/src
+      - ./frontend:/app/frontend
     ports:
       - "3000:3000"
 
