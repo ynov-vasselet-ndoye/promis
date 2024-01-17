@@ -3,13 +3,13 @@ FROM node:18
 RUN apt-get update && apt-get install libvips-dev -y
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
-WORKDIR app/backend
+WORKDIR app/backend/
 COPY package.json .
 COPY yarn.lock .
 COPY . .
 RUN rm -rf node_modules yarn-lock
 RUN yarn config set network-timeout 600000 -g && yarn install
 RUN yarn add pg
-RUN yarn build
+RUN ["yarn", "build"]
 EXPOSE 1337
 CMD ["yarn", "develop"]

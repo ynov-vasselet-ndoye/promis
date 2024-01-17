@@ -42,7 +42,7 @@
   <div class="container">
     <div class="presentation">
       <div class="description">
-        <h1>Découvrez nos luminaires éco-conçus via la madre de la mama lol</h1>
+        <h1>Découvrez nos luminaires éco-conçus</h1>
         <p>
           Avec Promis nous voulons changer les codes de l’industrie en créant
           des objets de décoration éco-responsables, made in France et aussi à
