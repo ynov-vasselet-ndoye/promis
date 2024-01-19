@@ -24,4 +24,5 @@ RUN pnpm update
 # Installer nuxt globalement
 RUN pnpm add -g nuxt
 
-CMD ["pnpm", "run", "dev"]
+# CMD ["pnpm", "run", "dev"]
+CMD ["nuxt", "dev"]
