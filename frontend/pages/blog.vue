@@ -1,8 +1,8 @@
-<script setup lang="ts">
+<script setup>
 
 const { find } = useStrapi()
 
-find('articles')
+const articles = await find('articles');
 </script>
 
 <template>
@@ -12,38 +12,11 @@ find('articles')
       <h1>Le blog du Promis</h1>
       <h2>Nos articles coup de coeur</h2>
       <div class="container-grid">
-        <NextLink to="/article/tri-des-dechets">
+        <NextLink to="/article/tri-des-dechets" v-for="article of articles.data">
           <div class="item">
             <img src="/image/article-design1.svg" alt="Article 1" />
             <p>Il y a une semaine</p>
-            <h3>Le tri des déchets / nouvelle loi</h3>
-          </div>
-        </NextLink>
-        <NextLink to="/article/tri-des-ampoules">
-          <div class="item">
-            <img src="/image/article-design2.svg" alt="Article 1" />
-            <p>Il y a une semaine</p>
-            <h3>Le tri des ampoules</h3>
-          </div>
-        </NextLink>
-        <NextLink to="/article/tri-des-dechets">
-          <div class="item">
-            <img src="/image/article-design3.svg" alt="Article 1" />
-            <p>Il y a un mois</p>
-            <h3>
-              Connaissez-vous l'éco-design ? Cette technique va vous apprendre à
-              ...
-            </h3>
-          </div>
-        </NextLink>
-        <NextLink to="/article/tri-des-dechets">
-          <div class="item">
-            <img src="/image/article-design4.svg" alt="Article 2" />
-            <p>Il y a un mois</p>
-            <h3>
-              Connaissez-vous l'éco-design ? Cette technique va vous apprendre à
-              ...
-            </h3>
+            <h3>{{ article.attributes.titre }}</h3>
           </div>
         </NextLink>
       </div>
