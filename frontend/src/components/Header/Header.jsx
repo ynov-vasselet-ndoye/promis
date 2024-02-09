@@ -12,7 +12,7 @@ export default function Header() {
     return (
         <div className="navbar">
             <Link href="/">
-                <Image src="/image/logo.svg" alt="Logo Naee" className="logo" width={163} height={76}/>
+                <Image src="/image/logo.svg" alt="Logo Naee" width={163} height={76}/>
             </Link>
             <div className="links-div">
                 <span onClick={() => setDropdown(!dropdown)}>
