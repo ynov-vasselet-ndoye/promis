@@ -14,12 +14,13 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     'nuxt-simple-robots'
   ],
+  strapi: {
+    url: 'https://promis.bo.diamondy.dev',
+    version: 'v4',
+    prefix: '/api'
+  },
   runtimeConfig: {
-    strapi: {
-      url: 'http://localhost:1337',
-      version: 'v4',
-      prefix: '/api'
-    }
+
   },
   watchers: {
     webpack: {
