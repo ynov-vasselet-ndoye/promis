@@ -13,16 +13,12 @@ WORKDIR /app/frontend/
 FROM base AS build
 
 COPY package.json .
+COPY yarn.lock .
 
 COPY . .
 # Supprimer node_modules et pnpm-lock.yaml, puis réinstaller les dépendances
 RUN rm -rf node_modules package-lock.json
-RUN npm install
-RUN pnpm install --shamefully-hoist
-RUN pnpm update
+RUN yarn  install
 
-# Installer nuxt globalement
-RUN pnpm add -g nuxt
 
-# CMD ["pnpm", "run", "dev"]
-CMD ["nuxt", "dev"]
+CMD ["yarn",  "dev"]
