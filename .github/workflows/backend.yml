@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: '18.x'
 
+      - run: cd path/to/folder
+
       - name: Install dependencies
         uses: ./
         run: yarn
