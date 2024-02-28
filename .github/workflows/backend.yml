@@ -25,9 +25,7 @@ jobs:
 
 
       - name: Install dependencies
-        uses: ./
         run: yarn
 
       - name: Build strapi admin panel
-        uses: ./
         run: yarn build
