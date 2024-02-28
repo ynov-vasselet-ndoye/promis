@@ -19,12 +19,12 @@ export default function Home() {
 					</Link>
 				</div>
 				<div className='img'>
-					<img src='/image/promis_rendu3D.png' alt='Image de Promis' />
+					<Image width={1080} height={1080} src='/image/promis_rendu3D.png' alt='Image de Promis' />
 				</div>
 			</div>
 			<section id='story'>
-				<div>
-					<img src='/image/svg1.svg' alt='' />
+				<div className={"img"}>
+					<Image width={1080} height={1080} src='/image/svg1.svg' alt='' />
 				</div>
 				<div>
 					<span className='subtitle'>NAISSANCE DE PROMIS</span>
@@ -60,13 +60,13 @@ export default function Home() {
 						C’est ainsi que la marque Promis fut créée.
 					</p>
 				</div>
-				<div>
-					<img src='/image/promis_packaging1.png' alt='' />
+				<div className={"img"}>
+					<Image width={520} height={1080} src='/image/promis_packaging1.png' alt='' />
 				</div>
 			</section>
 			<section id='conception'>
 				<div>
-					<img src='/image/sq.svg' alt='' />
+					<Image width={1080} height={1080} src='/image/sq.svg' alt='' />
 				</div>
 				<div>
 					<span className='subtitle'>NOS VALEURS</span>
@@ -86,15 +86,15 @@ export default function Home() {
 				<h2>Nos luminaires</h2>
 				<div id='luminaires-div'>
 					<div>
-						<img src='/image/diane1.svg' alt='' />
+						<Image width={240} height={240} src='/image/diane1.svg' alt='' />
 						<a href='https://www.shop.lamarquepromis.fr/'>En savoir plus</a>
 					</div>
 					<div>
-						<img src='/image/diane2.svg' alt='' />
+						<Image width={440} height={250} src='/image/diane2.svg' alt='' />
 						<a href='https://www.shop.lamarquepromis.fr/'>En savoir plus</a>
 					</div>
 					<div>
-						<img src='/image/diane3.svg' alt='' />
+						<Image width={440} height={250} src='/image/diane3.svg' alt='' />
 						<a href='https://www.shop.lamarquepromis.fr/'>En savoir plus</a>
 					</div>
 				</div>
@@ -102,7 +102,7 @@ export default function Home() {
 			<section id='nous-retrouver'>
 				<h2>Nos points de vente</h2>
 				<div>
-					<img src='/image/map.svg' alt='Nous retrouver en France' />
+					<Image width={1080} height={1080} src='/image/map.svg' alt='Nous retrouver en France' />
 					<div>
 						<h3>Où nous trouver ?</h3>
 						<p>Voici la liste de nos revendeurs</p>
@@ -159,19 +159,19 @@ export default function Home() {
 			</section>
 			<div id='reseaux'>
 				<a href='https://m.facebook.com/profile.php?id=100090573296197&eav=AfbWgBR8u6pwp3kHjunNHZjIGTBMaVGJ1oTMfbxrL5JeKL1P5NF7x-qNyfS7r4l4x2I&paipv=0'>
-					<img src='/image/facebook.svg' alt='Facebook' />
+					<Image width={48} height={48} src='/image/facebook.svg' alt='Facebook' />
 				</a>
 				<a href='https://instagram.com/promis_deco?igshid=YmMyMTA2M2Y='>
-					<img src='/image/instagram.svg' alt='Instagram' />
+					<Image width={56} height={56} src='/image/instagram.svg' alt='Instagram' />
 				</a>
 				<a href='https://www.tiktok.com/@promis_deco?_t=8bbZQV6e3Fj&_r=1'>
-					<img src='/image/tic-tac.svg' alt='Tiktok' />
+					<Image width={48} height={48} src='/image/tic-tac.svg' alt='Tiktok' />
 				</a>
 				<a href='https://www.pinterest.fr/lamarquepromis/?invite_code=be710444b3e64fee866aafa1638c7ade&sender=192036509019316596'>
-					<img src='/image/pinterest.svg' alt='Pinterest' />
+					<Image width={48} height={48} src='/image/pinterest.svg' alt='Pinterest' />
 				</a>
 				<a href='https://www.linkedin.com/company/93301375/admin/?feedType=following'>
-					<img src='/image/linkedin.svg' alt='Linkedin' />
+					<Image width={48} height={48} src='/image/linkedin.svg' alt='Linkedin' />
 				</a>
 			</div>
 		</div>
