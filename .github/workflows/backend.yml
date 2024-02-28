@@ -21,7 +21,9 @@ jobs:
           node-version: '18.x'
 
       - name: Install dependencies
+        uses: ./
         run: yarn
 
       - name: Build strapi admin panel
+        uses: ./
         run: yarn build
