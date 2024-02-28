@@ -29,6 +29,9 @@
     "contenu": {
       "type": "blocks",
       "required": true
+    },
+    "cicd": {
+      "type": "string"
     }
   }
 }
