@@ -20,7 +20,9 @@ jobs:
         with:
           node-version: '18.x'
 
-      - run: cd path/to/folder
+      - name: Cd into backend directory
+        run: cd ./backend
+
 
       - name: Install dependencies
         uses: ./
