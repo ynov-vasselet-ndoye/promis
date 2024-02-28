@@ -18,12 +18,10 @@ jobs:
       - name: Setup Node.js 18.9.0
         uses: actions/setup-node@v3
         with:
-          node-version: 18.19.0
+          node-version: '18.x'
 
       - name: Install dependencies
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+        run: yarn
 
       - name: Build strapi admin panel
         run: yarn build
