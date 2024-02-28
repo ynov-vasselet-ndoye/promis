@@ -26,6 +26,4 @@ jobs:
           cmd: install
 
       - name: Build strapi admin panel
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: run build
+        run: yarn build
