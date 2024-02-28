@@ -86,7 +86,7 @@ export default function Home() {
 				<h2>Nos luminaires</h2>
 				<div id='luminaires-div'>
 					<div>
-						<Image width={240} height={240} src='/image/diane1.svg' alt='' />
+						<Image width={250} height={250} src='/image/diane1.svg' alt='' />
 						<a href='https://www.shop.lamarquepromis.fr/'>En savoir plus</a>
 					</div>
 					<div>
