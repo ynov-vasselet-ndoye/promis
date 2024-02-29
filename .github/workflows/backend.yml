@@ -28,3 +28,12 @@ jobs:
       - name: Build strapi admin panel
         run: yarn build
         working-directory: ./backend
+
+      - name: Build Docker image
+        run: docker build -t my-app ./backend
+
+      - name: Run Docker image
+        run: docker run -d -p 1337:1337 my-app
+
+      - name: Test Docker image
+        run: curl -f http://localhost:1337
