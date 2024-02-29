@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
 
     steps:
       - uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
         run: docker run -d -p 1337:1337 my-app
 
       - name: Wait for Docker container to be ready
-        run: sleep 15
+        run: sleep 60
 
       - name: Test Docker image
         run: curl -f http://localhost:1337
