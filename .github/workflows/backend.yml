@@ -45,12 +45,9 @@ jobs:
 
 #      - name: Build Docker image
 #        run: docker build -t my-app ./backend
-#
-#      - name: Run Docker image
-#        run: docker run -d -p 1337:1337 my-app
 
       - name: Run Docker container
-        run: docker-compose -f ./docker-compose.yml up -d
+        run: docker compose -f ./docker-compose.yml up -d --build
 
       - name: Check Docker container is running
         run: docker ps
