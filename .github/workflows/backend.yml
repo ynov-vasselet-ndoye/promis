@@ -35,5 +35,8 @@ jobs:
       - name: Run Docker image
         run: docker run -d -p 1337:1337 my-app
 
+      - name: Wait for Docker container to be ready
+        run: sleep 60
+
       - name: Test Docker image
         run: curl -f http://localhost:1337
