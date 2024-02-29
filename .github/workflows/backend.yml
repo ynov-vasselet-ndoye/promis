@@ -21,6 +21,19 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Create .env file
+        run: |
+          echo DATABASE_CLIENT=${{ secrets.DATABASE_CLIENT }} >> $GITHUB_WORKSPACE/backend/.env
+          echo DATABASE_HOST=${{ secrets.DATABASE_HOST }} >> $GITHUB_WORKSPACE/backend/.env
+          echo DATABASE_NAME=${{ secrets.DATABASE_NAME }} >> $GITHUB_WORKSPACE/backend/.env
+          echo DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} >> $GITHUB_WORKSPACE/backend/.env
+          echo DATABASE_PORT=${{ secrets.DATABASE_PORT }} >> $GITHUB_WORKSPACE/backend/.env
+          echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> $GITHUB_WORKSPACE/backend/.env
+          echo ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }} >> $GITHUB_WORKSPACE/backend/.env
+          echo DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} >> $GITHUB_WORKSPACE/backend/.env
+          echo NODE_ENV=${{ secrets.NODE_ENV }} >> $GITHUB_WORKSPACE/backend/.env
+        
+
       - name: Install dependencies
         run: yarn
         working-directory: ./backend
