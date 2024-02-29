@@ -20,12 +20,10 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: Cd into backend directory
-        run: cd ./backend
-
-
       - name: Install dependencies
         run: yarn
+        working-directory: ./backend
 
       - name: Build strapi admin panel
         run: yarn build
+        working-directory: ./backend
