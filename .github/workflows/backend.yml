@@ -36,7 +36,15 @@ jobs:
         run: docker run -d -p 1337:1337 my-app
 
       - name: Wait for Docker container to be ready
-        run: sleep 60
+        run: |
+          for i in {1..30}; do
+            if curl -f http://localhost:1337; then
+              break
+            else
+              echo "Waiting for Docker container..."
+              sleep 5
+            fi
+          done
 
       - name: Test Docker image
         run: curl -f http://localhost:1337
