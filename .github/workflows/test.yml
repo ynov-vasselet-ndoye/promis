@@ -43,12 +43,12 @@ jobs:
         with:
           compose-file: "./docker/docker-compose.yml"
         env:
-          DATABASE_CLIENT=${{ secrets.DATABASE_CLIENT }}
-          DATABASE_HOST=${{ secrets.DATABASE_HOST }}
-          DATABASE_NAME=${{ secrets.DATABASE_NAME }}
-          DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}
-          DATABASE_PORT=5432
-          JWT_SECRET=${{ secrets.JWT_SECRET }}
-          ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}
-          DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
-          NODE_ENV=${{ secrets.NODE_ENV }}
+          DATABASE_CLIENT: ${{ secrets.DATABASE_CLIENT }}
+          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_PORT: 5432
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}
