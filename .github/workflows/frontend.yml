@@ -28,3 +28,6 @@ jobs:
       - name: build
         run: yarn build
         working-directory: ./frontend
+
+      - name: Test Frontend build
+        run: ls frontend/build
