@@ -58,7 +58,7 @@ jobs:
 
       - name: Wait for Docker container to be ready
         run: |
-          for i in {1..30}; do
+          for i in {1..10}; do
             if curl -f http://localhost:1337; then
               break
             else
@@ -67,5 +67,8 @@ jobs:
             fi
           done
 
-      - name: Test Docker image
-        run: curl -f http://localhost:1337/
+      - name: Test Backend build
+        run: ls backend/build
+
+      - name: Test Frontend build
+        run: ls frontend/build

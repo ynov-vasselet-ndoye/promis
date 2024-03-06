@@ -10,7 +10,7 @@ export default function Home() {
 				<div className='description'>
 					<h1>Découvrez nos luminaires éco-conçus</h1>
 					<p>
-						Avec Promis nous voulons changer les codes de l’industrie en créant
+						Avec Promis nous voulons changer les codes de l&apos;industrie en créant
 						des objets de décoration éco-responsables, made in France et aussi à
 						un prix raisonnable !
 					</p>
@@ -31,11 +31,11 @@ export default function Home() {
 					<h2>Notre histoire</h2>
 					<p>
 						La marque Promis a été créée par Mélys Pottier, Designer Produit.
-						Formée à l’École de Design Nantes Atlantique, elle a obtenu deux
+						Formée à l&apos;École de Design Nantes Atlantique, elle a obtenu deux
 						diplômes en alternance, un BTS Design de Produit et une Licence
 						Design Matériaux et Modélisations. C’est lors de son deuxième
 						apprentissage dans une entreprise de luminaires que Mélys prend
-						réellement conscience de l’avenir des produits après leurs usages.
+						réellement conscience de l&apos;avenir des produits après leurs usages.
 						Que deviennent les luminaires après leurs utilisations ? Peut-on les
 						recycler entièrement ? Comment recycler correctement un luminaire
 						composé de différents matériaux vissés ou collés ensemble ?
@@ -70,14 +70,14 @@ export default function Home() {
 				</div>
 				<div>
 					<span className='subtitle'>NOS VALEURS</span>
-					<h2>L'éco-conception</h2>
+					<h2>L&apos;éco-conception</h2>
 					<p>
-						L’éco-conception est le maître-mot de notre entreprise. Mais
-						l’éco-conception c’est quoi? C’est une méthode de conception qui
+						L&apos;éco-conception est le maître-mot de notre entreprise. Mais
+						l&apos;éco-conception c&apos;est quoi? C’est une méthode de conception qui
 						consiste à favoriser les ressources renouvelables, à prendre
 						conscience du renouvellement du produit et de son recyclage et à
 						valoriser le réemploi et/ou la réparation des matériaux. Promis,
-						c’est la volonté de concevoir un produit respectant l’environnement
+						c&apos;est la volonté de concevoir un produit respectant l&apos;environnement
 						et le développement durable.
 					</p>
 				</div>
@@ -108,12 +108,12 @@ export default function Home() {
 						<p>Voici la liste de nos revendeurs</p>
 						<ul>
 							<li>
-								<strong>Ajaccio</strong> - L'adresse décoration, 18 Boulevard
+								<strong>Ajaccio</strong> - L&apos;adresse décoration, 18 Boulevard
 								Danièle Casanova 20000
 							</li>
 							<li>
 								<strong>Angers</strong> - Boutique Caliko , 19 Rue Saint-Julien
-								49100 / L’atelier Coquille, 6 Rue Saint Blaise 49100
+								49100 / L&apos;atelier Coquille, 6 Rue Saint Blaise 49100
 							</li>
 							<li>
 								<strong>Bordeaux</strong> - Murmür, 5 rue Louis Combes 33000
@@ -148,13 +148,13 @@ export default function Home() {
 					<p>
 						Pour respecter nos valeurs, notre site-web est conçu le plus
 						écologiquement possible, vous ne recevrez donc que des mails
-						importants pour vous présenter les news de l’entreprise et ses
+						importants pour vous présenter les news de l&apos;entreprise et ses
 						produits (1 mail tous les 2-3 mois)
 					</p>
 				</div>
 				<div>
 					<input type='text' placeholder='Entrez votre adresse mail' />
-					<button>S'abonner</button>
+					<button>S&apos;abonner</button>
 				</div>
 			</section>
 			<div id='reseaux'>
