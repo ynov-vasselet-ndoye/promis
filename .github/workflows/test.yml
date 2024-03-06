@@ -37,8 +37,6 @@ jobs:
         working-directory: ./backend
 
       - uses: isbang/compose-action@v1.5.1
-        with:
-          compose-file: "./docker/docker-compose.yml"
         env:
           DATABASE_CLIENT: ${{ secrets.DATABASE_CLIENT }}
           DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
