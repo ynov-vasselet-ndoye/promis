@@ -31,12 +31,17 @@ jobs:
           echo NODE_ENV=${{ secrets.NODE_ENV }} >> $GITHUB_WORKSPACE/backend/.env
           cat $GITHUB_WORKSPACE/backend/.env
 
-
-      - name: Install dependencies
+      - name: Install back dependencies
         run: yarn
         working-directory: ./backend
 
-      - uses: isbang/compose-action@v1.5.1
+      - name: Install front dependencies
+        run: yarn
+        working-directory: ./frontend
+
+      - name: Start FusionAuth
+        run: docker compose up -d --build
+        shell: bash
         env:
           DATABASE_CLIENT: ${{ secrets.DATABASE_CLIENT }}
           DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
