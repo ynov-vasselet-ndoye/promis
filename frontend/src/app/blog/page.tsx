@@ -7,7 +7,7 @@ import {getArticles} from "@/utils/fetcher";
 // const fetcher = (...args: []) => fetch(...args).then(res => res.json())
 
 export default function Blog() {
-	const { data, error, isLoading } = useSWR<any>('/articles', getArticles);
+	
 	return (
 		<div className='container'>
 			<div className='sub-container'>
