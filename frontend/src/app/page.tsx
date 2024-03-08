@@ -19,12 +19,12 @@ export default function Home() {
 					</Link>
 				</div>
 				<div className='img'>
-					<Image width={1080} height={1080} src='/image/promis_rendu3D.png' alt='Image de Promis' />
+					<Image width={1080} height={1080} src='/image/promis_rendu3D.webp' alt='Image de Promis' />
 				</div>
 			</div>
 			<section id='story'>
 				<div className={"img"}>
-					<Image width={1080} height={1080} src='/image/svg1.svg' alt='' />
+					<Image width={1080} height={1080} src='/image/svg1.webp' alt='' />
 				</div>
 				<div>
 					<span className='subtitle'>NAISSANCE DE PROMIS</span>
@@ -61,12 +61,12 @@ export default function Home() {
 					</p>
 				</div>
 				<div className={"img"}>
-					<Image width={520} height={1080} src='/image/promis_packaging1.png' alt='' />
+					<Image width={520} height={1080} src='/image/promis_packaging1.webp' alt='' />
 				</div>
 			</section>
 			<section id='conception'>
 				<div>
-					<Image width={1080} height={1080} src='/image/sq.svg' alt='' />
+					<Image width={1080} height={1080} src='/image/sq.webp' alt='' />
 				</div>
 				<div>
 					<span className='subtitle'>NOS VALEURS</span>
@@ -86,15 +86,15 @@ export default function Home() {
 				<h2>Nos luminaires</h2>
 				<div id='luminaires-div'>
 					<div>
-						<Image width={250} height={250} src='/image/diane1.svg' alt='' />
+						<Image width={250} height={250} src='/image/diane1.webp' alt='' />
 						<a href='https://www.shop.lamarquepromis.fr/'>En savoir plus</a>
 					</div>
 					<div>
-						<Image width={440} height={250} src='/image/diane2.svg' alt='' />
+						<Image width={440} height={250} src='/image/diane2.webp' alt='' />
 						<a href='https://www.shop.lamarquepromis.fr/'>En savoir plus</a>
 					</div>
 					<div>
-						<Image width={440} height={250} src='/image/diane3.svg' alt='' />
+						<Image width={440} height={250} src='/image/diane3.webp' alt='' />
 						<a href='https://www.shop.lamarquepromis.fr/'>En savoir plus</a>
 					</div>
 				</div>
