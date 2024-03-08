@@ -39,29 +39,9 @@ jobs:
         run: yarn
         working-directory: ./backend
 
-#      - name: Build strapi admin panel
-#        run: yarn build
-#        working-directory: ./backend
+      - name: Build strapi admin panel
+        run: yarn build
+        working-directory: ./backend
 
-#      - name: Build Docker image
-#        run: docker build -t my-app ./backend
-
-#      - name: Run Docker container
-#        run: docker compose -f ./docker-compose.yml up -d --build
-#
-#      - name: Check Docker container is running
-#        run: docker ps
-#
-#      - name: Wait for Docker container to be ready
-#        run: |
-#          for i in {1..30}; do
-#            if curl -f http://localhost:1337; then
-#              break
-#            else
-#              echo "Waiting for Docker container..."
-#              sleep 5
-#            fi
-#          done
-#
-#      - name: Test Docker image
-#        run: curl -f http://localhost:1337/
+      - name: Check strapi build
+        run: ls backend/build
