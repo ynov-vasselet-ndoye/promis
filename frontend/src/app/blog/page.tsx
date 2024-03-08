@@ -7,7 +7,7 @@ import {getArticles} from "@/utils/fetcher";
 // const fetcher = (...args: []) => fetch(...args).then(res => res.json())
 
 export default function Blog() {
-	
+
 	return (
 		<div className='container'>
 			<div className='sub-container'>
