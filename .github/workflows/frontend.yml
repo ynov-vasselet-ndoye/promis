@@ -34,4 +34,4 @@ jobs:
         working-directory: ./frontend
 
       - name: Test Frontend build
-        run: ls frontend/build
+        run: ls frontend/.next

@@ -10,9 +10,17 @@ jobs:
         steps:
             - name: 🛜 Checkout
               uses: actions/checkout@v4
-            - name: 🚀 Build and push the frontend image
-              if: ${{contains(github.event.release.tag_name, 'front') }}
+
+            - name: 🖼️ Build and push the frontend image
+              if: ${{contains(fromJSON('["front", "app"]'), github.event.release.tag_name) }}
               run: |
                 docker login --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} ghcr.io
                 docker build ./frontend --tag ghcr.io/${{ github.repository }}-front:latest
+                docker push ghcr.io/${{ github.repository }}-front:latest
+
+            - name: 🗃️ Build and push the backend image
+              if: ${{contains(fromJSON('["back", "app"]'), github.event.release.tag_name)}}
+              run: |
+                docker login --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} ghcr.io
+                docker build ./backend --tag ghcr.io/${{ github.repository }}-front:latest
                 docker push ghcr.io/${{ github.repository }}-front:latest
