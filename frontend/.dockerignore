@@ -1,8 +1,9 @@
-*/.nuxt
-*/.output
-*/node_modules
-
+node_modules
+.next
+.vscode
 .gitignore
 README.md
+.dockerignore
+.git
 
 ._*
