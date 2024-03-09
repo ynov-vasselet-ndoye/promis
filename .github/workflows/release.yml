@@ -11,7 +11,7 @@ jobs:
             - name: 🛜 Checkout
               uses: actions/checkout@v4
             - name: 🚀 Build and push the frontend image
-              if: contains('front', github.event.release.tag_name)
+              if: ${{contains('front', github.event.release.tag_name) }}
               run: |
                 docker login --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} ghcr.io
                 docker build ./frontend --tag ghcr.io/${{ github.repository }}-front:latest
