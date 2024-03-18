@@ -55,15 +55,15 @@ jobs:
         with:
           java-version: '8'
       - name: Install SonarQube Scanner
-        uses: sonarsource-sonarqube/scan-actions@master
+        uses: SonarSource/sonarcloud-github-action@master
         with:
           args: \
-            -Dsonar.qualitygate.wait=false \ 
-            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \ 
+            -Dsonar.qualitygate.wait=false \
+            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \
             -Dsonar.sources="./backend" \
             -Dsonar.exclusions="**/*.xml"
       - name: Scan
-        uses: sonarsource-sonarqube/scan-actions@master
+        uses: SonarSource/sonarcloud-github-action@master
         with:
           args: \
             -Dsonar.qualitygate.wait=false \
