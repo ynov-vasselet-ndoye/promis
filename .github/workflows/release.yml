@@ -34,4 +34,4 @@ jobs:
                   port: ${{ secrets.SSH_PORT }}
                   script: |
                       cd studies/ynov/promis
-                      docker compose up -d
+                      docker compose up -d --build --pull always
