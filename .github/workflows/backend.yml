@@ -34,6 +34,7 @@ jobs:
           echo ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }} >> $GITHUB_WORKSPACE/backend/.env
           echo DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} >> $GITHUB_WORKSPACE/backend/.env
           echo NODE_ENV=${{ secrets.NODE_ENV }} >> $GITHUB_WORKSPACE/backend/.env
+          echo PORT=${{secrets.PORT}} >> $GITHUB_WORKSPACE/backend/.env
           cat $GITHUB_WORKSPACE/backend/.env
         
 

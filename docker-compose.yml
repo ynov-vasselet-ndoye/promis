@@ -24,7 +24,7 @@ services:
         - ./backend/package-lock.json:/app/backend/package-lock.json
         - ./backend/.env:/app/backend/.env
     ports:
-      - "1337:1337"
+      - "1338:1338"
     networks:
       - strapi
     depends_on:
