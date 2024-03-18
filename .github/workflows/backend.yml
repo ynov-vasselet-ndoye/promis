@@ -58,10 +58,10 @@ jobs:
         uses: sonarsource-sonarqube/scan-actions@master
         with:
           args: \
-            -Dsonar.qualitygate.wait=false \ # wait for the Quality Gate to be completed
-            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \ # the key of your project in SonarQube
-            -Dsonar.sources="./backend" \ # the directory where your source code is located
-            -Dsonar.exclusions="**/*.xml" # Optional: exclude some files or directories from analysis
+            -Dsonar.qualitygate.wait=false \ 
+            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \ 
+            -Dsonar.sources="./backend" \
+            -Dsonar.exclusions="**/*.xml"
       - name: Scan
         uses: sonarsource-sonarqube/scan-actions@master
         with:
@@ -69,7 +69,7 @@ jobs:
             -Dsonar.qualitygate.wait=false \
             -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \
             -Dsonar.sources="./backend" \
-            -Dsonar.exclusions="**/*.xml" # Optional: exclude some files or directories from analysis
+            -Dsonar.exclusions="**/*.xml"
       - name: Publish SonarQube report
         uses: actions/cache@v2
         with:
