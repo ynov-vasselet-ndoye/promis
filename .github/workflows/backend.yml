@@ -33,6 +33,8 @@ jobs:
           echo ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }} >> $GITHUB_WORKSPACE/backend/.env
           echo DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} >> $GITHUB_WORKSPACE/backend/.env
           echo NODE_ENV=${{ secrets.NODE_ENV }} >> $GITHUB_WORKSPACE/backend/.env
+          cat $GITHUB_WORKSPACE/backend/.env
+        
 
       - name: Install dependencies
         run: yarn
@@ -44,33 +46,3 @@ jobs:
 
       - name: Check strapi build
         run: ls backend/build
-
-  sonar_scan:
-    name: SonarQube Scan
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up SonarQube
-        uses: actions/setup-java@v1
-        with:
-          java-version: '8'
-      - name: Install SonarQube Scanner
-        uses: sonarsource-sonarqube/scan-actions@master
-        with:
-          args: \
-            -Dsonar.qualitygate.wait=false \ # wait for the Quality Gate to be completed
-            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \ # the key of your project in SonarQube
-            -Dsonar.sources="./backend" \ # the directory where your source code is located
-            -Dsonar.exclusions="**/*.xml" # Optional: exclude some files or directories from analysis
-      - name: Scan
-        uses: sonarsource-sonarqube/scan-actions@master
-        with:
-          args: \
-            -Dsonar.qualitygate.wait=false \
-            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \
-            -Dsonar.sources="./backend" \
-            -Dsonar.exclusions="**/*.xml" # Optional: exclude some files or directories from analysis
-      - name: Publish SonarQube report
-        uses: actions/cache@v2
-        with:
-          path: ~/.sonar/cache
