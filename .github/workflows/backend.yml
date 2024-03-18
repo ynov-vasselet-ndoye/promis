@@ -24,6 +24,7 @@ jobs:
 
       - name: Create .env file
         run: |
+          echo PORT=${{ secrets.PORT }} >> $GITHUB_WORKSPACE/backend/.env
           echo DATABASE_CLIENT=${{ secrets.DATABASE_CLIENT }} >> $GITHUB_WORKSPACE/backend/.env
           echo DATABASE_HOST=${{ secrets.DATABASE_HOST }} >> $GITHUB_WORKSPACE/backend/.env
           echo DATABASE_NAME=${{ secrets.DATABASE_NAME }} >> $GITHUB_WORKSPACE/backend/.env
