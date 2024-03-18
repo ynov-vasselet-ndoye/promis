@@ -47,3 +47,19 @@ jobs:
 
       - name: Check strapi build
         run: ls backend/build
+
+  sonar_scan:
+    name: SonarQube Scan
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up SonarQube
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: your_project_key
+          SONAR_ORGANIZATION: your_organization
