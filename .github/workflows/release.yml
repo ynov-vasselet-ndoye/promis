@@ -1,4 +1,4 @@
-name: Docker Image CD for GHCR
+name: Build and push docker images
 
 on:
     workflow_dispatch:
