@@ -51,26 +51,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up SonarQube
-        uses: actions/setup-java@v1
+        uses: actions/checkout@v3
         with:
-          java-version: '8'
-      - name: Install SonarQube Scanner
-        uses: SonarSource/sonarcloud-github-action@master
-        with:
-          args: \
-            -Dsonar.qualitygate.wait=false \
-            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \
-            -Dsonar.sources="./backend" \
-            -Dsonar.exclusions="**/*.xml"
+          fetch-depth: 0
       - name: Scan
         uses: SonarSource/sonarcloud-github-action@master
-        with:
-          args: \
-            -Dsonar.qualitygate.wait=false \
-            -Dsonar.projectKey="a33e3185e6447ef9807ea915dbb959e818df99ed" \
-            -Dsonar.sources="./backend" \
-            -Dsonar.exclusions="**/*.xml"
-      - name: Publish SonarQube report
-        uses: actions/cache@v2
-        with:
-          path: ~/.sonar/cache
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
