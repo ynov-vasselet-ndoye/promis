@@ -1,20 +1,23 @@
-FROM node:20-alpine as builder
-WORKDIR /promis-front
+# syntax = docker/dockerfile:1
 
-COPY yarn.lock package.json ./
-RUN yarn install --frozen-lockfile
+FROM node:20-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+ARG PORT=3000
+
+RUN corepack enable
+
+WORKDIR /app/frontend/
+
+# Build
+FROM base AS build
+
+COPY package.json .
+COPY yarn.lock .
 COPY . .
-RUN yarn build
 
-FROM node:20-alpine as runner
-WORKDIR /promis-front
-COPY --from=builder /promis-front/package.json .
-COPY --from=builder /promis-front/yarn.lock .
-COPY --from=builder /promis-front/next.config.mjs ./
-COPY --from=builder /promis-front/public ./public
-COPY --from=builder /promis-front/.next/standalone ./
-COPY --from=builder /promis-front/.next/static ./.next/static
+# Supprimer node_modules et pnpm-lock.yaml, puis réinstaller les dépendances
+RUN rm -rf node_modules package-lock.json
+RUN yarn  install
 
-EXPOSE 3000
-
-ENTRYPOINT ["node", "server.js"]
+CMD ["yarn",  "dev"]

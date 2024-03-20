@@ -1,8 +1,7 @@
 version: "3"
 services:
   back:
-    build:
-      context: ./backend
+    image: ghcr.io/ynov-vasselet-ndoye/promis-back
     restart: unless-stopped
     env_file: ./backend/.env
     environment:
@@ -33,6 +32,8 @@ services:
     build:
       context: ./frontend
     platform: linux/amd64 #for platform error on Apple M1 chips
+    volumes:
+      - ./frontend:/app/frontend
     ports:
       - "3000:3000"
 
