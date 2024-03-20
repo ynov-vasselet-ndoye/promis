@@ -1,27 +1,78 @@
+'use client';
+
 import Link from "next/link";
 import "./page.scss";
 import Image from "next/image";
 import useSWR from "swr";
-import {getArticles} from "@/utils/fetcher";
 
-// const fetcher = (...args: []) => fetch(...args).then(res => res.json())
-
+const fetcher = (url: string) => fetch(url).then(res => res.json());
 export default function Blog() {
+
+	const { data, error } = useSWR('http://localhost:1338/api/articles?populate=*', fetcher);
+
+	if (error) return <div>Failed to load</div>
+	if (!data) return <div>Loading...</div>
+	interface Article {
+		id: number;
+		title: string;
+		content: string;
+		cover : string;
+	}
+	if (data && Array.isArray(data.data)) {
+		console.log(data.data.map((article: {id: number, attributes: {
+				cover: any;
+				titre: string,
+				contenu: any[],
+				createdAt: string,
+				updatedAt: string,
+				publishedAt: string}}) => {
+			const titre = article.attributes.titre;
+			const paragraph = article.attributes.contenu.find(content => content.type === 'paragraph')?.children[0]?.text;
+			const cover = article.attributes.cover.data.attributes.url;
+			return { titre, paragraph, cover };
+		}));
+	} else {
+		console.log('Data is not an array');
+	}
 
 	return (
 		<div className='container'>
 			<div className='sub-container'>
-				<hr />
+				<hr/>
 				<h1>Le blog du Promis</h1>
 				<h2>Nos articles coup de coeur</h2>
 				<div className='container-grid'>
-					<Link href='/article/tri-des-dechets'>
-						<div className='item'>
-							<Image src='/image/article-design1.svg' alt='Article 1' height={417} width={208}/>
-							<p>Il y a une semaine</p>
-							{/* <h3>{{ article.attributes.titre }}</h3> */}
-						</div>
-					</Link>
+					{data && Array.isArray(data.data) ? data.data.map((article: {
+						id: number,
+						attributes: {
+							titre: string,
+							contenu: any[],
+							createdAt: string,
+							updatedAt: string,
+							publishedAt: string,
+							cover: {
+								data: {
+									attributes: {
+										url: string
+									}
+								}
+							}
+						}
+					}) => {
+						const titre = article.attributes.titre;
+						const paragraph = article.attributes.contenu.find(content => content.type === 'paragraph')?.children[0]?.text;
+						return (
+							<Link href={'/article/'+article.id}>
+								<div key={article.id} className='item'>
+									<Image
+										loader={({src}) => src}
+										src={"http://localhost:1338"+article.attributes.cover.data.attributes.url} alt={'Article '+article.id} height={417} width={208}/>
+									<p>{paragraph}</p>
+									<h3>{titre}</h3>
+								</div>
+							</Link>
+						);
+					}) : <div>Data is not an array</div>}
 				</div>
 			</div>
 			<section id='newsletter'>
@@ -35,7 +86,7 @@ export default function Blog() {
 					</p>
 				</div>
 				<div>
-					<input type='text' placeholder='Entrez votre adresse mail' />
+					<input type='text' placeholder='Entrez votre adresse mail'/>
 					<button>S&apos;abonner</button>
 				</div>
 			</section>
