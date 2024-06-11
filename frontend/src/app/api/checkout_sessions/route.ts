@@ -4,8 +4,10 @@ import {headers} from "next/headers";
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+type CombineRequest = Request & NextApiRequest;
+type CombineResponse = Response & NextApiResponse;
 
-export async function POST(req: NextApiRequest) {
+export async function POST(req: CombineRequest) {
     const headersList = headers()
 
     try {
@@ -37,7 +39,7 @@ export async function POST(req: NextApiRequest) {
     }
 }
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: CombineRequest) {
     try {
         const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
 
