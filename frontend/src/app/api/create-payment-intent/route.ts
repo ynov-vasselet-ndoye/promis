@@ -2,14 +2,13 @@ import {NextApiRequest, NextApiResponse} from "next";
 import {NextResponse} from "next/server";
 import {headers} from "next/headers";
 import Stripe from 'stripe';
-import {CartItem} from "@/stores/cart.store";
 
 const stripe: Stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 export async function POST(req: Request) {
     const { items, amount } = await req.json();
     let metadata = {};
 
-    items.map(({customization}: CartItem, index: number) => {
+    items.map(({customization}: any, index: number) => {
         console.log("product_" + index)
     })
 
