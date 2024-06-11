@@ -16,7 +16,7 @@ jobs:
               if: ${{contains(github.event.release.tag_name, 'front')}}
               run: |
                 docker login --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} ghcr.io
-                docker build ./frontend --tag ghcr.io/${{ github.repository }}-front:latest
+                docker build ./frontend/Dockerfile.production --tag ghcr.io/${{ github.repository }}-front:latest
                 docker push ghcr.io/${{ github.repository }}-front:latest
 
             - name: 🗃️ Build and push the backend image
