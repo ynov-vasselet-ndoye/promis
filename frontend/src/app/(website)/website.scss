@@ -1,0 +1,28 @@
+main {
+    min-height: calc(100vh - 128px);
+
+    &:not(#home) {
+        margin: 128px 10% 16px;
+    }
+}
+
+article {
+    margin: 128px auto 56px;
+    max-width: 60%;
+}
+
+body {
+    font-family: var(--ft-avenir);
+    background-color: #FEF7EE;
+}
+
+.button {
+    background-color: #F0540B;
+    border: none;
+    color: #FEF7EE;
+    padding: 1rem 3rem;
+    border-radius: 25px;
+    cursor: pointer;
+    width: max-content;
+    display: block;
+  }

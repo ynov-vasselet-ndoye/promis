@@ -1,0 +1,43 @@
+#footer {
+    padding: 92px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#newsletter {
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    grid-gap: 0 3%;
+    align-items: center;
+    background-color: #F0540B;
+    color: #FEF7EE;
+    padding: 80px 15%;
+  
+    input {
+      background: rgba(255, 255, 255, 0.1);
+      border: 0.4px solid #ffffff;
+      border-radius: 4px;
+      width: 300px;
+      margin-right: 1rem;
+      padding: 24px;
+  
+      &::placeholder {
+        color: #FEF7EE;
+      }
+    }
+  
+    button {
+      background-color: #FEF7EE;
+      border-radius: 4px;
+      padding: 24px 72px;
+      border: none;
+    }
+  
+    h2 {
+      font-weight: 500;
+      margin: 0;
+      color: #FEF7EE;
+    }
+  }
+  

@@ -1,0 +1,26 @@
+#reseaux {
+  position: fixed;
+  top: 50%;
+  left: 40px;
+  translate: 0 -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+  background-color: #FEF7EE;
+  filter : drop-shadow(0 0 10px rgba($color: #000, $alpha: 0.1));
+  border-radius: 100vmax;
+  padding: 16px 10px;
+
+  a {
+    height: 32px;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+}

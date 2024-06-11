@@ -1,0 +1,27 @@
+
+p,
+h2 {
+    margin-top: 5rem;
+}
+
+.button {
+    background-color: #F0540B;
+    border: none;
+    color: #FEF7EE;
+    padding: 1rem 3rem;
+    border-radius: 25px;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 426px) {
+    .container {
+        margin: 3rem auto;
+        width: 70%;
+    }
+
+    p {
+        margin-top: 3rem;
+    }
+}

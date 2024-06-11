@@ -1,7 +1,8 @@
 version: "3"
 services:
   back:
-    image: ghcr.io/ynov-vasselet-ndoye/promis-back
+    build:
+      context: ./backend
     restart: unless-stopped
     env_file: ./backend/.env
     environment:
